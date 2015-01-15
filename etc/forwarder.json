@@ -1,0 +1,20 @@
+{
+  "network": {
+    "servers":       [ "log-shipper:5043" ],
+    "timeout":         3,
+    "ssl ca":          "/opt/ssl/logstash-forwarder.crt",
+    "ssl certificate": "/opt/ssl/logstash-forwarder.crt",
+    "ssl key":         "/opt/ssl/logstash-forwarder.key"
+  },
+
+  "files": [
+    {
+      "paths": [ "/var/log/nginx/*.log", "/var/log/httpd/*.log" ],
+      "fields": { "environment": "development", "type": "http_access", "cluster": "master"  }
+    },
+    {
+      "paths": [ "/var/log/webim/*.log" ],
+      "fields": { "environment": "development", "type": "webim", "host": "68"  }
+    }
+  ]
+}
