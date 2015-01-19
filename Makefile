@@ -4,10 +4,10 @@ NAME = log-forwarder
 IMAGE = lotreal/logstash-forwarder
 
 define docker_run_flags
---link log-shipper:log-shipper \
---volumes-from log-shipper \
+--link log-lumberjack:log-lumberjack \
+--volumes-from log-lumberjack \
 --volume /var/log:/var/log \
---volume ${BSDIR}/forwarder.json:/etc/logstash/forwarder.json
+--volume ${BSDIR}/etc/forwarder.json:/etc/logstash/forwarder.json
 endef
 
 

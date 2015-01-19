@@ -1,6 +1,6 @@
 {
   "network": {
-    "servers":       [ "log-shipper:5043" ],
+    "servers":       [ "log-lumberjack:5043" ],
     "timeout":         3,
     "ssl ca":          "/opt/ssl/logstash-forwarder.crt",
     "ssl certificate": "/opt/ssl/logstash-forwarder.crt",
