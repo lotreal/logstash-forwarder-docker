@@ -9,12 +9,8 @@
 
   "files": [
     {
-      "paths": [ "/var/log/nginx/*.log", "/var/log/httpd/*.log" ],
-      "fields": { "environment": "development", "type": "http_access", "cluster": "master"  }
-    },
-    {
       "paths": [ "/var/log/webim/*.log" ],
-      "fields": { "environment": "development", "type": "webim", "host": "68"  }
+      "fields": { "type": "webim", "host": "68"  }
     }
   ]
 }
